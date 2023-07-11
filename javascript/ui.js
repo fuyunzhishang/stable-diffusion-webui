@@ -219,6 +219,7 @@ function restoreProgressImg2img() {
 function hiddenSetting () {
     var settingTab = document.getElementsByClassName('tab-nav scroll-hide')[0].querySelectorAll('button')
     console.log(settingTab, 'settingTab---')
+    settingTab[settingTab.length - 3].style.setProperty('display', 'none')
     settingTab[settingTab.length - 2].style.setProperty('display', 'none')
     settingTab[settingTab.length -1 ].style.setProperty('display', 'none')
 }
