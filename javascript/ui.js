@@ -216,10 +216,18 @@ function restoreProgressImg2img() {
     return id;
 }
 
+function hiddenSetting () {
+    var settingTab = document.getElementsByClassName('tab-nav scroll-hide')[0].querySelectorAll('button')
+    console.log(settingTab, 'settingTab---')
+    settingTab[settingTab.length - 2].style.setProperty('display', 'none')
+    settingTab[settingTab.length -1 ].style.setProperty('display', 'none')
+}
+
 
 onUiLoaded(function() {
     showRestoreProgressButton('txt2img', localStorage.getItem("txt2img_task_id"));
     showRestoreProgressButton('img2img', localStorage.getItem("img2img_task_id"));
+    hiddenSetting()
 });
 
 
@@ -254,6 +262,7 @@ onAfterUiUpdate(function() {
 
     var json_elem = gradioApp().getElementById('settings_json');
     if (json_elem == null) return;
+    console.log(json_elem, 'json_elem---')
 
     var textarea = json_elem.querySelector('textarea');
     var jsdata = textarea.value;
